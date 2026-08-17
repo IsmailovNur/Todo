@@ -3,3 +3,8 @@ export interface IUser {
   username: string;
   token: string;
 }
+
+export interface RegisterOrLoginMutation {
+  username: string;
+  password: string;
+}

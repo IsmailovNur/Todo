@@ -4,3 +4,8 @@ export interface ITodo {
   description?: string;
   status: 'new' | 'in_progress' | 'complete';
 }
+
+export interface TodoMutation {
+  title: string;
+  description?: string;
+}
