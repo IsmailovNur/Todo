@@ -1,9 +1,10 @@
 import { model, Schema, Types } from "mongoose";
 import { ITodo } from "../types";
 
-const TodoSchema = new Schema({
+const TodoSchema = new Schema<ITodo>({
   user: {
     type: Types.ObjectId,
+    ref: "User",
     required: true,
   },
   title: {
@@ -12,13 +13,14 @@ const TodoSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
+    default: '',
   },
   status: {
     type: String,
+    enum: ['new', 'in_progress', 'complete'],
     required: true,
-    default: 'in_progress',
-  }
+    default: 'new',
+  },
 })
 
 export const Todo = model<ITodo>('Todo', TodoSchema);
