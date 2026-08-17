@@ -5,7 +5,7 @@ const rootPath = __dirname;
 const config = {
   rootPath,
   publicPath: path.join(rootPath, 'public'),
-  mongoDbUrl: "mongodb://localhost/tune"
+  mongoDbUrl: "mongodb://localhost/todos"
 };
 
 export default config;

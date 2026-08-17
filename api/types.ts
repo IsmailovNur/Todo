@@ -1,4 +1,4 @@
-import { Document, Model, Types } from 'mongoose';
+import { Document, HydratedDocument, Model, Types } from 'mongoose';
 import { Request } from "express";
 
 export type TodoStatus = 'new' | 'in_progress' | 'complete';
@@ -24,5 +24,5 @@ export interface ITodo {
 export type UserModel = Model<IUser, {}, UserMethods>;
 
 export interface RequestWithUser extends Request {
-  user?: IUser;
+  user?: HydratedDocument<IUser>;
 }
